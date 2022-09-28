@@ -1,0 +1,19 @@
+version: '3'
+services:
+
+  # SQL database
+  postgres:
+    image: "postgres:9.6.0"
+    restart: "always"
+    volumes:
+      - "ktor-starter-data:/var/lib/postgresql/data"
+    ports:
+      - "54321:5432"
+    environment:
+      POSTGRES_USER: "crossword"
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_DB: "crossword-backend-db"
+    mem_limit: "8g"
+
+volumes:
+  ktor-starter-data:

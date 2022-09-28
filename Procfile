@@ -1,0 +1,1 @@
+web: java -jar build/libs/com.example.crossword-backend-0.0.1.jar
