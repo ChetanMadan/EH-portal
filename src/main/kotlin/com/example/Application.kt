@@ -1,6 +1,8 @@
 package com.example
 
+import com.example.modules.configureAuthentication
 import com.example.modules.dependencyInjectionModule
+import com.example.modules.sosRouteApiModule
 import com.example.modules.userRouteApiModule
 import com.example.plugins.*
 import io.ktor.application.Application
@@ -15,7 +17,8 @@ fun main() {
     val engine = engine {
         dependencyInjectionModule()
         userRouteApiModule()
-
+        sosRouteApiModule()
+        configureAuthentication()
         configureSerialization()
         configureSecurity()
         configureRouting()

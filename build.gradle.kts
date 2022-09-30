@@ -80,9 +80,13 @@ dependencies {
     implementation("com.zaxxer:HikariCP:5.0.1")
     implementation("io.insert-koin:koin-ktor:$koin_version")
 
+    implementation("com.google.firebase:firebase-admin:7.1.0")
+
     implementation("org.simpleframework:simple-xml:2.7.1")
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.13.4")
     implementation("org.json:json:20090211")
+
+
     testImplementation("io.ktor:ktor-server-test-host:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test:$kotlin_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test:$kotlin_version")

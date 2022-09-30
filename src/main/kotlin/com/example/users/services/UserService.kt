@@ -8,6 +8,7 @@ import io.ktor.features.BadRequestException
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.selectAll
+import org.jetbrains.exposed.sql.update
 
 class UserService {
     suspend fun getAllUsers(): List<User> = dbQuery {
@@ -30,5 +31,11 @@ class UserService {
             }
             return newUser
 
+    }
+
+    suspend fun disableSOSbyUserId(userId: Int){
+        Users.update({Users.id eq userId}){
+            it[Users.status] = 0
+        } > 0
     }
 }
